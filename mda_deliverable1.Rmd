@@ -21,6 +21,16 @@ library(pak)
 pak::pak("diverse-data-hub/diversedata")
 ```
 
+If you're having trouble with installation, you may not have `Rtools` installed yet. Try the following instructions (Windows): 
+
+- Close RStudio
+
+- Download the specific version of Rtools that matches your version of R (for example, Rtools44 for R 4.4, or Rtools45 for newer versions) from the [CRAN Rtools page](https://cran.r-project.org/bin/windows/Rtools/). Follow the instructions to install. 
+
+- In RStudio, run `Sys.which("make")` to see if RTools has been successfully installed. 
+
+- Run `install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s", .Platform$pkgType, R.Version()$os, R.Version()$arch))` 
+
 **0.2: Load Packages**
 
 Typically, R Packages are loaded in at the very beginning of the analysis. If you later want to use other packages, please come back and add them here:
